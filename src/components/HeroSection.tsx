@@ -69,21 +69,23 @@ export function HeroSection({ onNavigate }: HeroSectionProps) {
           {/* Left Bento Metrics Rail */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
             {/* Card A */}
-            <div className="p-4 rounded-xl bg-surface-container/60 border border-border-dark backdrop-blur-xl relative overflow-hidden group hover:border-white/25 transition-all duration-300">
+            <div className="p-4 rounded-xl bg-surface-container/60 border border-border-dark backdrop-blur-xl relative overflow-hidden group hover:border-white/25 transition-all duration-300 flex flex-col justify-between">
               <div className="absolute -right-6 -bottom-6 w-20 h-20 bg-aura-violet/20 rounded-full blur-xl group-hover:scale-150 transition-transform" />
-              <div className="flex items-baseline justify-between gap-2 mb-1.5">
-                <span className="text-[32px] leading-[36px] tracking-[-0.02em] font-extrabold text-paper-pure tabular-nums">
-                  8+
-                </span>
-                <span className="font-mono text-[11px] leading-[14px] tracking-[0.1em] uppercase text-tertiary tabular-nums">
-                  &apos;25
-                </span>
-              </div>
-              <div className="text-[14px] leading-[20px] font-semibold text-paper-pure/95">
-                Lead Full-Stack
-              </div>
-              <div className="font-mono text-[11px] leading-[16px] text-on-surface-variant truncate mt-0.5">
-                Neumedira Indonesia
+              <div>
+                <div className="flex items-baseline justify-between gap-2 mb-1.5">
+                  <span className="text-[22px] xl:text-[24px] leading-[30px] tracking-[-0.02em] font-extrabold text-paper-pure">
+                    Full-Stack
+                  </span>
+                  <span className="font-mono text-[11px] leading-[14px] tracking-[0.1em] uppercase text-tertiary tabular-nums">
+                    &apos;25
+                  </span>
+                </div>
+                <div className="text-[13px] leading-[18px] font-semibold text-primary">
+                  End-to-End Web Builder
+                </div>
+                <p className="text-[12px] leading-[17px] text-on-surface-variant mt-1">
+                  Crafting responsive UIs, structured routing &amp; scalable relational databases.
+                </p>
               </div>
               <div className="flex items-center gap-1.5 mt-3">
                 <span className="px-2 py-0.5 rounded bg-surface-container-highest/80 text-[10px] font-mono text-primary">
@@ -91,6 +93,9 @@ export function HeroSection({ onNavigate }: HeroSectionProps) {
                 </span>
                 <span className="px-2 py-0.5 rounded bg-surface-container-highest/80 text-[10px] font-mono text-primary">
                   React
+                </span>
+                <span className="px-2 py-0.5 rounded bg-surface-container-highest/80 text-[10px] font-mono text-tertiary">
+                  Tailwind
                 </span>
               </div>
             </div>
@@ -138,22 +143,41 @@ export function HeroSection({ onNavigate }: HeroSectionProps) {
             </span>
           </div>
 
-          <div className="relative z-10 my-auto flex flex-col items-center justify-center text-center py-6">
-            <div className="relative flex items-center justify-center w-40 h-40">
-              <div className="absolute inset-0 rounded-full border border-primary/30 border-dashed animate-orbit-slow" />
-              <div className="absolute inset-2 rounded-full border border-aura-orange/30 animate-orbit-reverse" />
-              <div className="w-24 h-24 rounded-2xl bg-gradient-to-tr from-aura-violet to-aura-orange p-[2px] flex items-center justify-center shadow-[0_0_40px_rgba(110,68,255,0.6)] backdrop-blur-md group-hover:scale-105 transition-transform duration-300 overflow-hidden">
+          <div className="relative z-10 my-auto flex flex-col items-center justify-center text-center py-3">
+            <div className="relative flex items-center justify-center w-56 h-56 sm:w-60 sm:h-60">
+              <div className="absolute inset-0 rounded-full border border-primary/35 border-dashed animate-orbit-slow" />
+              <div className="absolute inset-2.5 rounded-full border border-aura-orange/35 animate-orbit-reverse" />
+              <div className="relative w-40 h-40 sm:w-44 sm:h-44 rounded-2xl bg-gradient-to-tr from-aura-violet via-[#38BDF8] to-aura-orange p-[2px] flex items-center justify-center shadow-[0_0_48px_rgba(110,68,255,0.65)] backdrop-blur-md group-hover:scale-[1.03] transition-transform duration-300 overflow-hidden">
                 {!imgError ? (
-                  <img
-                    src="/assets/aistudio/profile_45cd97a0.jpg"
-                    alt="M. Jagad Arthoseno"
-                    referrerPolicy="no-referrer"
-                    onError={() => setImgError(true)}
-                    className="w-full h-full rounded-[14px] object-cover object-top"
-                  />
+                  <>
+                    <img
+                      src="/assets/aistudio/profile_45cd97a0.jpg"
+                      alt="M. Jagad Arthoseno"
+                      referrerPolicy="no-referrer"
+                      onError={() => setImgError(true)}
+                      className="w-full h-full rounded-[14px] object-cover object-top contrast-[1.1] saturate-[0.86] brightness-[1.03] hue-rotate-[-4deg]"
+                    />
+                    {/* Subtle Techy HUD Color Grade & Scanline Overlay */}
+                    <div
+                      aria-hidden="true"
+                      className="pointer-events-none absolute inset-[2px] rounded-[14px] bg-gradient-to-tr from-[#6E44FF]/25 via-transparent to-[#38BDF8]/18 mix-blend-screen"
+                    />
+                    <div
+                      aria-hidden="true"
+                      className="pointer-events-none absolute inset-[2px] rounded-[14px] opacity-40 bg-[repeating-linear-gradient(0deg,rgba(255,255,255,0.08)_0px,rgba(255,255,255,0.08)_1px,transparent_1px,transparent_4px)]"
+                    />
+                    <span
+                      aria-hidden="true"
+                      className="pointer-events-none absolute top-2 left-2 w-2.5 h-2.5 border-t-2 border-l-2 border-[#38BDF8]/80 rounded-tl-[2px]"
+                    />
+                    <span
+                      aria-hidden="true"
+                      className="pointer-events-none absolute bottom-2 right-2 w-2.5 h-2.5 border-b-2 border-r-2 border-primary/80 rounded-br-[2px]"
+                    />
+                  </>
                 ) : (
                   <div className="w-full h-full rounded-[14px] bg-surface-container-lowest flex items-center justify-center">
-                    <span className="text-[20px] font-black text-paper-pure tracking-tighter">
+                    <span className="text-[24px] font-black text-paper-pure tracking-tighter">
                       JAY
                     </span>
                   </div>
@@ -161,7 +185,7 @@ export function HeroSection({ onNavigate }: HeroSectionProps) {
               </div>
             </div>
 
-            <div className="mt-6 px-4 py-1.5 rounded-full bg-surface-glass-dark border border-border-dark backdrop-blur-xl flex items-center gap-2.5">
+            <div className="mt-4 px-4 py-1.5 rounded-full bg-surface-glass-dark border border-border-dark backdrop-blur-xl flex items-center gap-2.5">
               <span className="w-1.5 h-1.5 rounded-full bg-status-emerald animate-ping" aria-hidden="true" />
               <span className="font-mono text-[11px] leading-[14px] tracking-[0.1em] text-paper-pure uppercase whitespace-nowrap">
                 JAGAD.DEV · SYS RUNNING
@@ -209,34 +233,56 @@ export function HeroSection({ onNavigate }: HeroSectionProps) {
           <div className="p-5 rounded-xl bg-surface-container-low/80 border border-border-dark backdrop-blur-xl relative overflow-hidden group hover:border-primary/40 transition-all duration-300">
             <div className="flex items-center justify-between mb-3">
               <span className="px-2 py-0.5 rounded bg-primary/10 border border-primary/25 font-mono text-[11px] leading-[14px] text-primary">
-                LATEST BUILD
+                PROFILES &amp; CV
               </span>
-              <span className="font-mono text-[11px] leading-[14px] text-on-surface-variant">NOV 2026</span>
+              <span className="font-mono text-[11px] leading-[14px] text-on-surface-variant">VERIFIED</span>
             </div>
             <h2 className="text-[20px] leading-[26px] font-bold text-paper-pure group-hover:text-primary transition-colors">
-              Personal Portfolio Web
+              GitHub &amp; Resume
             </h2>
-            <p className="text-[14px] leading-[20px] text-on-surface-variant mt-1 line-clamp-2">
-              Swiss-editorial design system with live light refraction and performance tuning.
+            <p className="text-[13px] leading-[19px] text-on-surface-variant mt-1">
+              Explore source repositories and interactive curriculum vitae on rxresu.me.
             </p>
 
-            <div className="mt-4 p-3 rounded-lg bg-canvas-dark/90 border border-border-dark flex items-center justify-between gap-2">
-              <div className="space-y-0.5 min-w-0">
-                <div className="font-mono text-[11px] leading-[14px] text-on-surface-variant">
-                  FRAMEWORK
-                </div>
-                <div className="font-mono text-[12px] leading-[16px] text-paper-pure font-medium truncate">
-                  Laravel · Python
-                </div>
-              </div>
+            <div className="mt-4 space-y-2">
               <a
-                aria-label="Open Personal Portfolio Web live demo"
-                className="w-8 h-8 rounded-full bg-surface-container-high border border-border-dark flex items-center justify-center text-paper-pure hover:bg-primary hover:text-ink-primary transition-all shrink-0"
-                href="https://portfolio-website-theta-lyart-40.vercel.app/"
+                aria-label="Open GitHub profile @Kostadinanta"
+                className="p-2.5 rounded-lg bg-canvas-dark/90 border border-border-dark hover:border-primary/50 flex items-center justify-between gap-2 transition-colors group/link"
+                href="https://github.com/Kostadinanta"
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                <span className="font-mono text-[11px]" aria-hidden="true">↗</span>
+                <div className="space-y-0.5 min-w-0">
+                  <div className="font-mono text-[10px] leading-[13px] text-on-surface-variant uppercase">
+                    GITHUB
+                  </div>
+                  <div className="font-mono text-[12px] leading-[16px] text-paper-pure font-medium truncate">
+                    github.com/Kostadinanta
+                  </div>
+                </div>
+                <span className="w-7 h-7 rounded-full bg-surface-container-high border border-border-dark flex items-center justify-center text-paper-pure group-hover/link:bg-primary group-hover/link:text-ink-primary transition-all shrink-0 font-mono text-[11px]">
+                  ↗
+                </span>
+              </a>
+
+              <a
+                aria-label="Open interactive resume on rxresu.me"
+                className="p-2.5 rounded-lg bg-canvas-dark/90 border border-border-dark hover:border-tertiary/50 flex items-center justify-between gap-2 transition-colors group/link"
+                href="https://rx.cv/jagadartho250/cv-ukm"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <div className="space-y-0.5 min-w-0">
+                  <div className="font-mono text-[10px] leading-[13px] text-on-surface-variant uppercase">
+                    RXRESU.ME
+                  </div>
+                  <div className="font-mono text-[12px] leading-[16px] text-tertiary font-medium truncate">
+                    rx.cv/jagadartho250/cv-ukm
+                  </div>
+                </div>
+                <span className="w-7 h-7 rounded-full bg-surface-container-high border border-border-dark flex items-center justify-center text-paper-pure group-hover/link:bg-tertiary group-hover/link:text-ink-primary transition-all shrink-0 font-mono text-[11px]">
+                  ↗
+                </span>
               </a>
             </div>
           </div>

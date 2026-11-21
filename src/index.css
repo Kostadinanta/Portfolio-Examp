@@ -105,9 +105,23 @@
   animation: orbit-spin-reverse 18s linear infinite;
 }
 
+@keyframes marquee-rtl {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-marquee-rtl {
+  animation: marquee-rtl 22s linear infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-orbit-slow,
   .animate-orbit-reverse,
+  .animate-marquee-rtl,
   .animate-ping,
   .animate-pulse {
     animation: none !important;

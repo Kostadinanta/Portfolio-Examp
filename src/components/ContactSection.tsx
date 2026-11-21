@@ -127,7 +127,7 @@ export function ContactSection() {
 
               return (
                 <a
-                  key={link.label}
+                  key={`${link.label}-${link.value}`}
                   className={`p-3.5 rounded-xl bg-surface-container-high/50 border border-border-dark flex items-center justify-between ${hoverBorder} hover:bg-surface-container-high transition-all group`}
                   href={link.href}
                   rel="noopener noreferrer"

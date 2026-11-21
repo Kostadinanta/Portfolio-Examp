@@ -329,9 +329,9 @@ export const NETWORK_LINKS: NetworkLink[] = [
     accent: 'primary',
   },
   {
-    label: 'PORTFOLIO WEB',
-    value: 'Live Vercel App',
-    href: 'https://portfolio-website-theta-lyart-40.vercel.app/',
+    label: 'LINKEDIN',
+    value: 'in/muhammad-jagad',
+    href: 'https://linkedin.com/in/muhammad-jagad-arthoseno-28b4232aa/',
     accent: 'orange',
   },
   {
