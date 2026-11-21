@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-surface: #121315;
+  --color-surface-dim: #121315;
+  --color-surface-bright: #38393b;
+  --color-surface-container-lowest: #0d0e10;
+  --color-surface-container-low: #1b1c1e;
+  --color-surface-container: #1f2022;
+  --color-surface-container-high: #292a2c;
+  --color-surface-container-highest: #343537;
+  --color-surface-variant: #343537;
+  --color-canvas-dark: #0B0C0E;
+  --color-surface-glass-dark: rgba(20, 22, 27, 0.66);
+  --color-surface-glass-light: rgba(255, 255, 255, 0.68);
+  --color-border-dark: rgba(255, 255, 255, 0.12);
+  --color-border-specular: rgba(255, 255, 255, 0.85);
+  --color-border-light: rgba(17, 18, 21, 0.09);
+
+  --color-on-surface: #e3e2e5;
+  --color-on-surface-variant: #cac3d9;
+  --color-on-background: #e3e2e5;
+  --color-background: #121315;
+  --color-outline: #938ea2;
+  --color-outline-variant: #484456;
+
+  --color-primary: #cabeff;
+  --color-on-primary: #32009a;
+  --color-primary-container: #6e44ff;
+  --color-on-primary-container: #f0eaff;
+  --color-secondary: #ffb59e;
+  --color-secondary-container: #fd591e;
+  --color-tertiary: #62df7d;
+  --color-on-tertiary: #003914;
+  --color-tertiary-container: #007c34;
+
+  --color-paper-pure: #FFFFFF;
+  --color-paper-primary: #F6F7F9;
+  --color-paper-muted: rgba(246, 247, 249, 0.65);
+  --color-ink-primary: #111215;
+  --color-ink-muted: rgba(17, 18, 21, 0.62);
+
+  --color-aura-violet: #6E44FF;
+  --color-aura-orange: #FF5A1F;
+  --color-status-emerald: #16A34A;
+
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Instrument Serif", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #0B0C0E;
+    color: #e3e2e5;
+    font-family: var(--font-sans);
+    overscroll-behavior-y: none;
+  }
+
+  :focus-visible {
+    outline: 2px solid #cabeff;
+    outline-offset: 2px;
+  }
+}
+
+.starfield-bg {
+  background-image:
+    radial-gradient(1.5px 1.5px at 12% 18%, rgba(255, 255, 255, 0.75) 50%, transparent 100%),
+    radial-gradient(1px 1px at 28% 72%, rgba(202, 190, 255, 0.7) 50%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 46% 24%, rgba(255, 90, 31, 0.65) 50%, transparent 100%),
+    radial-gradient(1px 1px at 63% 81%, rgba(255, 255, 255, 0.6) 50%, transparent 100%),
+    radial-gradient(2px 2px at 78% 15%, rgba(202, 190, 255, 0.85) 50%, transparent 100%),
+    radial-gradient(1px 1px at 88% 58%, rgba(255, 255, 255, 0.7) 50%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 35% 48%, rgba(98, 223, 125, 0.6) 50%, transparent 100%);
+}
+
+@keyframes orbit-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes orbit-spin-reverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.animate-orbit-slow {
+  animation: orbit-spin 24s linear infinite;
+}
+
+.animate-orbit-reverse {
+  animation: orbit-spin-reverse 18s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-orbit-slow,
+  .animate-orbit-reverse,
+  .animate-ping,
+  .animate-pulse {
+    animation: none !important;
+  }
+}
